@@ -6,7 +6,7 @@ export const imageDocumentHandler = createDocumentHandler<'image'>({
   kind: 'image',
   onCreateDocument: async ({ title, dataStream }) => {
     let draftContent = '';
-
+    console.log('title', title);
     const { image } = await experimental_generateImage({
       model: myProvider.imageModel('small-model'),
       prompt: title,
